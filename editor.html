@@ -9,6 +9,38 @@
     <link rel="stylesheet" href="./assets/stylesheets/editor.css" />
 </head>
 <body>
+    <!-- Conntexte Menu :: Début -->
+    <ul class="context-menu">
+        <li><a href="#"><i class="bx bx-copy"></i> Copier</a></li>
+        <li><a href="#"><i class="bx bx-paste"></i> Coller</a></li>
+        <li><a href="#"><i class="bx bx-cut"></i> Couper</a></li>
+        <li><a href="#"><i class="bx bx-x"></i> Supprimer</a></li>
+        <li class="divider"></li>
+        <li>
+            <a href="#">
+                <i class="bx bx-share-alt"></i> Partager
+                <i class="bx bxs-chevron-right arrow"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#"><i class="bx bxl-facebook"></i> Facebook</a></li>
+                <li><a href="#"><i class="bx bxl-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="bx bxl-whatsapp"></i> What's App</a></li>
+                <li><a href="#"><i class="bx bxl-instagram"></i> Instagram</a></li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-dots-horizontal-rounded"></i> Plus
+                        <i class="bx bxs-chevron-right arrow"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="bx bxl-github"></i> Github</a></li>
+                        <li><a href="#"><i class="bx bxl-gitlab"></i> Gitlab</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- Conntexte Menu :: Fin -->
     <aside class="sidebar">
         <a href="#" class="brand">
             <i class="bx bxs-smile"></i>
@@ -97,6 +129,7 @@
                 </div>
             </div>
             <div class="container">
+                
                 <div id="tabmenu">
                     <ul class="tab-menu">
                         <li class="active" data-target="home"><i class="bx bx-home-alt"></i> Accueil</li>
@@ -144,19 +177,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- -->
             </div>
         </main>
     </section>
-    <ul class="context-menu">
-        <li><a href="#"><i class="bx bx-copy"></i> Copier</a></li>
-        <li><a href="#"><i class="bx bx-paste"></i> Coller</a></li>
-        <li><a href="#"><i class="bx bx-cut"></i> Couper</a></li>
-        <li class="divider"></li>
-        <li><a href="#"><i class="bx bx-share"></i> Partager</a></li>
-        <li><a href="#"><i class="bx bx-transfert-alt"></i> Traduire</a></li>
-        <li class="divider"></li>
-        <li><a href="#"><i class="bx bx-refresh"></i> Recharger</a></li>
-    </ul>
     <script src="./assets/javascript/dashboard.js"></script>
 </body>
 </html>

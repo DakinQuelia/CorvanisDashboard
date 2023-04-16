@@ -53,11 +53,12 @@ searchButton.addEventListener('click', (e) =>
 
 // Afficher le contenu des onglets horizontaux
 const allTabs = document.querySelectorAll('.tab-menu li');
-const allContents = document.querySelectorAll('.tab-contents .tab-content');
-const line = document.querySelector('.tab-menu .line');
 
 if (allTabs !== null)
 {
+    const allContents = document.querySelectorAll('.tab-contents .tab-content');
+    const line = document.querySelector('.tab-menu .line');
+
     let tabWidth = allTabs[0].offsetWidth;
     let tabLeft = allTabs[0].offsetLeft;
 
@@ -139,9 +140,6 @@ if (allTabsVR !== null)
     });
 }
 
-// Menu contextuel
-
-
 // Reponsive
 if (window.innerWidth < 768)
 {
@@ -153,11 +151,33 @@ else if (window.innerWidth > 576)
     searchForm.classList.remove('show');
 }
 
+// Au redimensionnement
 window.addEventListener('resize', function() 
 {
     if (this.innerWidth > 576)
     {
         searchButtonIcon.classList.replace('bx-x', 'bx-search');
         searchForm.classList.remove('show');
+    }
+});
+
+// Menu contextuel
+const contextMenu = document.querySelector('.context-menu');
+
+window.addEventListener('contextmenu', function(e) 
+{
+    e.preventDefault();
+
+    console.log(`Position :: Y: ${e.offsetY}px || X : ${e.offsetX}px`);
+
+    if (contextMenu.classList.contains('show'))
+    {
+        contextMenu.classList.remove('show');
+    }
+    else
+    {
+        contextMenu.style.top = `${e.offsetY}px`;
+        contextMenu.style.left = `${e.offsetX}px`;
+        contextMenu.classList.add('show');
     }
 });
