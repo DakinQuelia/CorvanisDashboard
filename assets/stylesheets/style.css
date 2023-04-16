@@ -14,6 +14,7 @@
     --lato:                 'Lato', sans-serif;
     --sidebar-width:        280px;
     --border-radius-btn:    36px;
+    --modal-border-color:   #DDDDDD;
     /* Couleurs */
     --light:                #F9F9F9;
     --blue:                 #3C91E6;
@@ -24,11 +25,15 @@
     --red:                  #DB504A;
     --light-red:            #fdc5c3;
     --yellow:               #FFCE26;
+    --yellow-2:             #E2A03F;
 	--light-yellow:         #FFF2C6;
     --orange:               #FD7238;
     --light-orange:         #FFE0D3;
     --green:                #008000;
     --light-green:          #c2ffc2;
+    --violet:               #805DCA;
+    --primary:              var(--blue);
+    --secondary:            var(--yellow-2);
 }
 
 /**
@@ -614,6 +619,145 @@ body.dark {
 
 .status.success {
     background: var(--green); 
+}
+
+/**
+*   Composant : modal
+**/
+.modal {
+    max-width: 600px;
+    width: 100%;
+    background: var(--light);
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .07);
+    height: auto;
+}
+
+.modal .modal-header {
+
+}
+
+.modal .modal-body {
+    
+}
+
+.modal .modal-footer {
+    
+}
+
+.modal .modal-body .modal-content {
+    font-size: 12px;
+}
+
+.modal .modal-body .modal-content h2,
+.modal .modal-body .modal-content p {
+    margin: 10px;
+}
+
+/**
+*   Composant : tabs (horizontal)
+**/
+.tab-menu {
+    display: flex;
+    position: relative;
+    grid-gap: 24px;
+    padding: 0 10px 10px;
+    border-bottom: 1px solid var(--modal-border-color);
+    flex-wrap: wrap;
+}
+
+.tab-menu > li {
+    position: relative;
+    cursor: pointer;
+    color: var(--dark-grey);
+    transition: all .3s ease;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.tab-menu > li:hover {
+    color: var(--dark);
+}
+
+.tab-menu > li.active {
+    color: var(--primary);
+}
+
+.tab-menu .dropdown {
+    position: absolute;
+    top: 130%;
+    right: 0;
+    width: 160px;
+    padding: 10px 0;
+    background: var(--light);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .07);
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+    z-index: 100;
+}
+
+.tab-menu > li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+}
+
+.tab-menu .dropdown li {
+    padding: 8px 16px;
+    transition: all .3s ease;
+    color: var(--dark-grey);
+}
+
+.tab-menu .dropdown li:hover {
+    background: var(--grey);
+    color: var(--dark);
+}
+
+.tab-menu .dropdown li.active {
+    color: var(--primary);
+}
+
+.tab-menu .dropdown .separator {
+
+}
+
+.tab-menu .line {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    height: 2px;
+    background: var(--primary);
+    transition: all .3s ease;
+}
+
+.tab-contents .tab-content {
+    display: none;
+}
+
+.tab-contents .tab-content.active {
+    display: block;
+}
+
+.tab-contents .tab-content h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.tab-contents .tab-content p {
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+/**
+*   Composant : tabs (vertical)
+**/
+.tab-menu-vr {
+    
 }
 
 /**

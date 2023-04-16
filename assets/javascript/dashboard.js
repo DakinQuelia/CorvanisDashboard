@@ -25,10 +25,7 @@ allSideMenu.forEach((item) =>
 const menuBar = document.querySelector('.content nav i.bx.bx-menu');
 const sidebar = document.querySelector('.sidebar');
 
-menuBar.addEventListener('click', () => 
-{
-    sidebar.classList.toggle('hide');
-});
+menuBar.addEventListener('click', () => { sidebar.classList.toggle('hide'); });
 
 // Afficher / Masquer le formulaire de recherche
 const searchButton = document.querySelector('.content nav form .form-input button');
@@ -51,6 +48,60 @@ searchButton.addEventListener('click', (e) =>
         {
             searchButtonIcon.classList.replace('bx-x', 'bx-search');
         }
+    }
+});
+
+// Afficher le contenu des onglets
+const allTabs = document.querySelectorAll('.tab-menu li');
+const allContents = document.querySelectorAll('.tab-contents .tab-content');
+const line = document.querySelector('.tab-menu .line');
+let tabWidth = allTabs[0].offsetWidth;
+let tabLeft = allTabs[0].offsetLeft;
+
+line.style.width = tabWidth + 'px';
+line.style.left = tabLeft + 'px';
+
+allTabs.forEach((item) => 
+{
+    if (!item.classList.contains('dropdown-toggle'))
+    {
+        item.addEventListener('click', function() 
+        {
+            allTabs.forEach((i) => 
+            {
+                i.classList.remove('active');
+            });
+
+            if (this.parentElement.classList.contains('dropdown'))
+            {
+                tabWidth = this.parentElement.parentElement.offsetWidth;
+                tabLeft = this.parentElement.parentElement.offsetLeft;
+
+                this.parentElement.parentElement.classList.add('active');
+            }
+            else
+            {
+                tabWidth = this.offsetWidth;
+                tabLeft = this.offsetLeft;
+
+                this.classList.add('active');
+            }
+
+            line.style.width = tabWidth + 'px';
+            line.style.left = tabLeft + 'px';
+
+            allContents.forEach((content) => 
+            {
+                if (this.dataset.target === content.id)
+                {
+                    content.classList.add('active');
+                }
+                else
+                {
+                    content.classList.remove('active');
+                }
+            });
+        });
     }
 });
 
