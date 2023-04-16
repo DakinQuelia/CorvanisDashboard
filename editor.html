@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration :: Modal et onglets</title>
+    <link rel="stylesheet" href="./assets/stylesheets/style.css" />
+    <link rel="stylesheet" href="./assets/stylesheets/editor.css" />
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="#" class="brand">
+            <i class="bx bxs-smile"></i>
+            <span class="text">Administration</span>
+        </a>
+        <ul class="side-menu top">
+            <li class="active">
+                <a href="#" class="">
+                    <i class="bx bxs-dashboard"></i>
+                    <span class="text">Accueil</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="">
+                    <i class="bx bxs-shopping-bag-alt"></i>
+                    <span class="text">Boutique</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="">
+                    <i class="bx bxs-doughnut-chart"></i>
+                    <span class="text">Statistiques</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="">
+                    <i class="bx bxs-message-dots"></i>
+                    <span class="text">Messages</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="">
+                    <i class="bx bxs-group"></i>
+                    <span class="text">Equipe</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="">
+                    <i class="bx bxs-cog"></i>
+                    <span class="text">Paramètres</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="logout">
+                    <i class="bx bxs-log-out-circle"></i>
+                    <span class="text">Déconnexion</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <section class="content" id="content">
+        <nav>
+            <i class="bx bx-menu"></i>
+            <a href="#" class="nav-link">Catégories</a>
+            <form action="">
+                <div class="form-input">
+                    <input type="search" name="" id="" placeholder="Rechercher..." />
+                    <button type="submit" class="search-btn">
+                        <i class="bx bx-search"></i>
+                    </button>
+                </div>
+            </form>
+            <a href="#" class="notification">
+                <i class="bx bxs-bell"></i>
+                <span class="num">10</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="https://picsum.photos/50/50" alt="Avatar" title="Avatar" />
+            </a>
+        </nav>
+        <main>
+            <div class="head-title">
+                <div class="left">
+                    <h1>Administration :: Editeur de texte</h1>
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="#">Administration</a>
+                        </li>
+                        <li><i class="bx bx-chevrons-right"></i></li>
+                        <li>
+                            <a class="active" href="#">Accueil</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div id="tabmenu">
+                    <ul class="tab-menu">
+                        <li class="active" data-target="home"><i class="bx bx-home-alt"></i> Accueil</li>
+                        <li class="dropdown-toggle">
+                            <i class="bx bx-user-circle"> </i> Profil
+                            <i class="bx bx-chevron-down"></i>
+                            <ul class="dropdown">
+                                <li class="active" data-target="action1">Action 1</li>
+                                <li data-target="action2">Action 2</li>
+                                <li data-target="action3">Action 3</li>
+                            </ul>
+                        </li>
+                        <li data-target="contact"><i class="bx bx-phone"> </i> Contact</li>
+                        <li data-target="settings"><i class="bx bx-cog"> </i> Paramètres</li>
+                        <span class="line"></span>
+                    </ul>
+                    <div class="tab-contents">
+                        <div class="tab-content active" id="home">
+                            <h2>Accueil</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sunt nam dolores rem eveniet beatae esse ullam, alias ducimus ex labore commodi eligendi id hic debitis et corrupti corporis perferendis!</p>
+                            <p>Atque cumque laborum minus repellat, quos enim suscipit voluptates nesciunt rerum quaerat expedita perferendis quas eaque ipsa mollitia illum impedit magni, obcaecati qui deleniti blanditiis et hic in. Quos, sint.</p>
+                        </div>
+                        <div class="tab-content" id="action1">
+                            <h2>Profil - Action 1</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sunt nam dolores rem eveniet beatae esse ullam, alias ducimus ex labore commodi eligendi id hic debitis et corrupti corporis perferendis!</p>
+                            <p>Nesciunt, numquam. Earum dolorum eaque perferendis dolor laboriosam consequuntur soluta voluptatem repudiandae vel culpa quam, ullam, blanditiis explicabo, saepe provident inventore mollitia beatae a perspiciatis omnis tempore. Maxime, ullam vero.</p>
+                        </div>
+                        <div class="tab-content" id="action2">
+                            <h2>Profil - Action 2</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sunt nam dolores rem eveniet beatae esse ullam, alias ducimus ex labore commodi eligendi id hic debitis et corrupti corporis perferendis!</p>
+                            <p>Nesciunt, numquam. Earum dolorum eaque perferendis dolor laboriosam consequuntur soluta voluptatem repudiandae vel culpa quam, ullam, blanditiis explicabo, saepe provident inventore mollitia beatae a perspiciatis omnis tempore. Maxime, ullam vero.</p>
+                        </div>
+                        <div class="tab-content" id="action3">
+                            <h2>Profil - Action 3</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sunt nam dolores rem eveniet beatae esse ullam, alias ducimus ex labore commodi eligendi id hic debitis et corrupti corporis perferendis!</p>
+                        </div>
+                        <div class="tab-content" id="contact">
+                            <h2>Contact</h2>
+                            <p>Nesciunt, numquam. Earum dolorum eaque perferendis dolor laboriosam consequuntur soluta voluptatem repudiandae vel culpa quam, ullam, blanditiis explicabo, saepe provident inventore mollitia beatae a perspiciatis omnis tempore. Maxime, ullam vero.</p>
+                        </div>
+                        <div class="tab-content" id="settings">
+                            <h2>Paramètres</h2>
+                            <p>Earum illo eligendi illum voluptas tempora deleniti reiciendis tenetur rerum incidunt. Veritatis deleniti possimus a. Odio temporibus distinctio voluptatum, ipsam quae omnis nulla maxime tempore, dolorem, aut voluptas! Aliquam, nihil!</p>
+                            <p>At vel eligendi earum iusto magnam sunt non? Iusto amet adipisci quam voluptate minima ratione, ducimus enim neque? Laboriosam accusamus enim adipisci nisi suscipit autem delectus quisquam quo ut ipsa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <ul class="context-menu">
+        <li><a href="#"><i class="bx bx-copy"></i> Copier</a></li>
+        <li><a href="#"><i class="bx bx-paste"></i> Coller</a></li>
+        <li><a href="#"><i class="bx bx-cut"></i> Couper</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="bx bx-share"></i> Partager</a></li>
+        <li><a href="#"><i class="bx bx-transfert-alt"></i> Traduire</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="bx bx-refresh"></i> Recharger</a></li>
+    </ul>
+    <script src="./assets/javascript/dashboard.js"></script>
+</body>
+</html>

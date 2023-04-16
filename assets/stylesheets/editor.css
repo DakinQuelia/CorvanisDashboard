@@ -1,0 +1,39 @@
+/**
+*   Style       : CorvanisDashboard 
+*   Fichier     : styke.css
+*   Version     : 1.0.0.
+*   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
+**/
+@charset "UTF-8";
+@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+
+:root {
+    /* Global */
+    
+    /* Couleurs */
+    --light:                #F9F9F9;
+    --black:                #222222;
+    --blue:                 #3C91E6;
+    --light-blue:           #CFE8FF;
+    --light-blue-2:         #e0f0ff;
+    --grey:                 #EEEEEE;
+    --dark-grey:            #AAAAAA;
+    --dark:                 #342E37;
+    --red:                  #DB504A;
+    --light-red:            #fdc5c3;
+    --yellow:               #FFCE26;
+    --yellow-2:             #E2A03F;
+	--light-yellow:         #FFF2C6;
+    --orange:               #FD7238;
+    --light-orange:         #FFE0D3;
+    --green:                #008000;
+    --light-green:          #c2ffc2;
+    --violet:               #805DCA;
+    --white:                #FFFFFF;
+    --primary:              var(--blue);
+    --secondary:            var(--yellow-2);
+}
+
+.corvanis-editor {
+
+}

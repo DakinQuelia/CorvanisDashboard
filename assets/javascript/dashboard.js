@@ -139,6 +139,9 @@ if (allTabsVR !== null)
     });
 }
 
+// Menu contextuel
+
+
 // Reponsive
 if (window.innerWidth < 768)
 {
