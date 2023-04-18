@@ -916,7 +916,7 @@ body > .container:last-of-type {
     left: 0;
     min-width: 220px;
     background: var(--light);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, .07);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .09);
     border-radius: 8px; 
     z-index: 100;
     padding: 5px 0;
@@ -957,10 +957,16 @@ body > .container:last-of-type {
 
 .context-menu li a i {
     font-size: 1.25rem;
+    width: 20px;
+    height: 20px;
 }
 
 .context-menu li a i.bx-x {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--red);
+    font-size: 1.70rem;
 }
 
 .context-menu li a i.bxl-facebook {
@@ -998,6 +1004,7 @@ body > .container:last-of-type {
 
 .context-menu li:hover > .dropdown-menu {
     top: -5px;
+    left: 102%;
     opacity: 1;
     visibility: visible;
 }
