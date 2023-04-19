@@ -17,8 +17,9 @@
     --grey:                 #EEEEEE;
     --dark-grey:            #AAAAAA;
     --dark:                 #342E37;
+    --dark-2:               #0A1931;
     --dark-light-1:         #343434;
-    --dark-light-2:         #555555;    
+    --dark-light-2:         #555555;  
     --red:                  #DB504A;
     --light-red:            #fdc5c3;
     --yellow:               #FFCE26;
@@ -57,6 +58,11 @@
 
 body {
     background: var(--light);
+}
+
+section {
+    width: 100%;
+    padding: .5rem 1rem;
 }
 
 /**
@@ -156,5 +162,59 @@ body {
 *   Barre latérale (sidebar)
 **/
 .sidebar {
-    
+    position: fixed;
+    background: var(--light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.sidebar .close-menu {
+    color: var(--dark);
+    text-align: right;
+    padding-top: .5rem;
+    font-weight: bold;
+}
+
+.sidebar .nav-menu {
+    margin-top: 2rem;
+}
+
+.sidebar .nav-menu li a {
+    display: block;
+    padding: .5rem 1rem;
+    color: var(--black);
+    border-radius: .25rem;
+    margin: .5rem 0;
+    position: relative;
+}
+
+.sidebar .nav-menu li a:hover {
+    color: var(--blue);
+    background: var(--light-blue-2);
+}
+
+.sidebar .nav-menu li a.active {
+    background: var(--grey);
+}
+
+.sidebar .nav-menu li .dropdown {
+    display: none;
+    padding-left: 1rem;
+    max-height: 0;
+    transition: max-height .5s;
+    overflow: hidden;
+}
+
+.sidebar .nav-menu li .dropdown.active {
+    display: block;
+    max-height: 500px;
+}
+
+.sidebar .nav-menu li a .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
 }
