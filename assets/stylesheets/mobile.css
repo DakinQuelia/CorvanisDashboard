@@ -7,3 +7,154 @@
 @charset "UTF-8";
 @import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
 
+:root {
+    /* Couleurs */
+    --light:                #F9F9F9;
+    --black:                #222222;
+    --blue:                 #3C91E6;
+    --light-blue:           #CFE8FF;
+    --light-blue-2:         #e0f0ff;
+    --grey:                 #EEEEEE;
+    --dark-grey:            #AAAAAA;
+    --dark:                 #342E37;
+    --dark-light-1:         #343434;
+    --dark-light-2:         #555555;    
+    --red:                  #DB504A;
+    --light-red:            #fdc5c3;
+    --yellow:               #FFCE26;
+    --yellow-2:             #E2A03F;
+	--light-yellow:         #FFF2C6;
+    --orange:               #FD7238;
+    --light-orange:         #FFE0D3;
+    --green:                #008000;
+    --light-green:          #C2FFC2;
+    --violet:               #805DCA;
+    --white:                #FFFFFF;
+    /* Autres couleurs */
+    --modal-border-color:   #DDDDDD;
+    --color-facebook:       #3B5998;
+    --color-twitter:        #1DA1F2;
+    --color-whatsapp:       #25D366;
+    --color-instagram:      #C13583;
+    --primary:              var(--blue);
+    --secondary:            var(--yellow-2);
+    /* Global */
+    --poppins:              'Poppins', sans-serif;
+    --lato:                 'Lato', sans-serif;
+    --sidebar-width:        280px;
+    --border-radius-btn:    36px;
+    --border: var(--grey);
+}
+
+* {
+    font-family: var(--poppins);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    background: var(--light);
+}
+
+/**
+*   Barre de navigation
+**/
+.menu {
+    width: 100%;
+    padding: .5rem 1rem;
+    background: var(--white);
+    display: flex;;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .07);
+}
+
+.menu .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.menu i.bx-menu {
+    cursor: pointer;
+}
+
+.menu i.bx-menu:hover {
+    color: var(--blue);
+}
+
+.menu .user {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menu .user .img-box {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: .5rem;
+}
+
+.menu .user .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu .user .user-menu {
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    background: var(--white);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .09);
+    border-radius: 8px; 
+    border: 2px solid var(--border);
+    width: 180px;
+    padding: .5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s;
+}
+
+.menu .user .user-menu li a {
+    display: block;
+    padding: .5rem 1rem;
+    color: var(--black);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background .5s;
+}
+
+.menu .user .user-menu li a .bx {
+    margin-right: .5rem;
+}
+
+.menu .user .user-menu li a:hover {
+    color: var(--blue);
+    background: var(--grey);
+}
+
+.menu .user .user-menu::before {
+    content: '';
+    position: absolute;
+    border: .5rem solid;
+    border-color: transparent transparent var(--white);
+    top: calc(.5rem * -2);
+    right: .5rem;
+}
+
+.menu .user:hover .user-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/**
+*   Barre latérale (sidebar)
+**/
+.sidebar {
+    
+}
