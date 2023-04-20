@@ -18,3 +18,16 @@ dropdownToggle.addEventListener('click', function()
 /**
 *   Gestion de la barre de navigation
 **/
+const menu = document.querySelector('.menu-bar');
+const navmenu = document.querySelector('.sidebar');
+const closemenu = document.querySelector('.sidebar .close-menu');
+
+menu.addEventListener('click', () =>
+{ 
+    navmenu.classList.add('active');
+});
+
+closemenu.addEventListener('click', () =>
+{ 
+    navmenu.classList.remove('active');
+});
