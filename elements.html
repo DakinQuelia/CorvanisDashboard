@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration :: Elements HTML</title>
+    <link rel="stylesheet" href="./assets/stylesheets/style.css" />
+    <link rel="stylesheet" href="./assets/stylesheets/editor.css" />
+</head>
+<body>
+    <!-- Conntexte Menu :: Début -->
+    <ul class="context-menu">
+        <li><a href="#"><i class="bx bx-copy"></i> Copier</a></li>
+        <li><a href="#"><i class="bx bx-paste"></i> Coller</a></li>
+        <li><a href="#"><i class="bx bx-cut"></i> Couper</a></li>
+        <li><a href="#"><i class="bx bx-x"></i> Supprimer</a></li>
+        <li class="divider"></li>
+        <li>
+            <a href="#">
+                <i class="bx bx-share-alt"></i> Partager
+                <i class="bx bxs-chevron-right arrow"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#"><i class="bx bxl-facebook"></i> Facebook</a></li>
+                <li><a href="#"><i class="bx bxl-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="bx bxl-whatsapp"></i> What's App</a></li>
+                <li><a href="#"><i class="bx bxl-instagram"></i> Instagram</a></li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-dots-horizontal-rounded"></i> Plus
+                        <i class="bx bxs-chevron-right arrow"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="bx bxl-github"></i> Github</a></li>
+                        <li><a href="#"><i class="bx bxl-gitlab"></i> Gitlab</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- Conntexte Menu :: Fin -->
+    <aside class="sidebar">
+        <a href="#" class="brand">
+            <i class="bx bxs-smile"></i>
+            <span class="text">Administration</span>
+        </a>
+        <ul class="side-menu top">
+            <li class="active">
+                <a href="#" class="">
+                    <i class="bx bxs-dashboard"></i>
+                    <span class="text">Accueil</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="">
+                    <i class="bx bxs-shopping-bag-alt"></i>
+                    <span class="text">Boutique</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="">
+                    <i class="bx bxs-doughnut-chart"></i>
+                    <span class="text">Statistiques</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="">
+                    <i class="bx bxs-message-dots"></i>
+                    <span class="text">Messages</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="">
+                    <i class="bx bxs-group"></i>
+                    <span class="text">Equipe</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="">
+                    <i class="bx bxs-cog"></i>
+                    <span class="text">Paramètres</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="logout">
+                    <i class="bx bxs-log-out-circle"></i>
+                    <span class="text">Déconnexion</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <section class="content" id="content">
+        <nav>
+            <i class="bx bx-menu"></i>
+            <a href="#" class="nav-link">Catégories</a>
+            <form action="">
+                <div class="form-input">
+                    <input type="search" name="" id="" placeholder="Rechercher..." />
+                    <button type="submit" class="search-btn">
+                        <i class="bx bx-search"></i>
+                    </button>
+                </div>
+            </form>
+            <a href="#" class="notification">
+                <i class="bx bxs-bell"></i>
+                <span class="num">10</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="https://picsum.photos/50/50" alt="Avatar" title="Avatar" />
+            </a>
+        </nav>
+        <main>
+            <h1 style="margin-bottom: 15px;">Menus personnalisés</h1>
+            <div class="row">
+                <label for="country"></label>
+                <select name="country" id="country" class="custom">
+                    <option value="" selected>Option 1</option>
+                    <option value="">Option 2</option>
+                    <option value="">Option 3</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="language"></label>
+                <select name="language" id="language" class="custom">
+                    <option value="" selected>Option 1</option>
+                    <option value="">Option 2</option>
+                    <option value="">Option 3</option>
+                </select>
+            </div>
+            <h1 style="margin-bottom: 15px;">Gestion des tags</h1>
+            <div class="row">
+                <div class="modal" style="margin: 0 auto;">
+                    <div class="modal-body">
+                        <h3><i class="bx bxs-purchase-tag-alt"></i> Ajouter vos tags</h3>
+                        <p>Utilisez les virgules pour séparer chaque tag.</p>
+                        <form action="#" class="tags-wrap">
+                            <div class="wrapper">
+                                <ul class="tags">
+                                    <li>
+                                        <span class="text">html</span>
+                                        <i class="bx bx-x close-button"></i>
+                                    </li>
+                                    <li>
+                                        <span class="text">css</span>
+                                        <i class="bx bx-x close-button"></i>
+                                    </li>
+                                    <li>
+                                        <span class="text">javascript</span>
+                                        <i class="bx bx-x close-button"></i>
+                                    </li>
+                                    <li>
+                                        <span class="text">php</span>
+                                        <i class="bx bx-x close-button"></i>
+                                    </li>
+                                    <li>
+                                        <span class="text">python</span>
+                                        <i class="bx bx-x close-button"></i>
+                                    </li>
+                                    <li>
+                                        <span class="text">C#</span>
+                                        <i class="bx bx-x close-button"></i>
+                                    </li>
+                                    <input type="text" name="tag" id="tag" class="input-tag" placeholder="Ajouter un tag" />
+                                </ul>
+                            </div>
+                            <div class="bottom">
+                                <button type="button" class="remove-all">Supprimer tout</button>
+                                <p><span class="total-tags">10</span> tags</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <script src="./assets/javascript/dashboard.js"></script>
+    <script src="./assets/javascript/tags.js"></script>
+</body>
+</html>

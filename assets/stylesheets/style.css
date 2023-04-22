@@ -6,6 +6,7 @@
 **/
 @charset "UTF-8";
 @import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
@@ -22,9 +23,12 @@
     --light-blue-2:         #e0f0ff;
     --grey:                 #EEEEEE;
     --dark-grey:            #AAAAAA;
+    --dark-grey-2:          #CCCCCC;    
     --dark:                 #342E37;
     --dark-light-1:         #343434;
-    --dark-light-2:         #555555;    
+    --dark-light-2:         #555555;
+    --light-grey:           #ebe9e9; 
+    --light-grey-2:         #DDDDDD; 
     --red:                  #DB504A;
     --light-red:            #fdc5c3;
     --yellow:               #FFCE26;
@@ -92,6 +96,11 @@ body > .container {
 
 body > .container:last-of-type {
     margin-bottom: 0;
+}
+
+.row {
+    display: flex;
+    margin-bottom: .5rem;
 }
 
 /**
@@ -716,7 +725,7 @@ body > .container:last-of-type {
 }
 
 .modal .modal-body {
-    
+    font-size: 12px;
 }
 
 .modal .modal-footer {
@@ -730,6 +739,14 @@ body > .container:last-of-type {
 .modal .modal-body .modal-content h2,
 .modal .modal-body .modal-content p {
     margin: 10px;
+}
+
+.modal h3:not(.modal-header) {
+    margin-bottom: 15px;
+}
+
+.modal .modal-body:not(.modal-content) p {
+    margin-bottom: 10px;
 }
 
 /**
@@ -1007,6 +1024,124 @@ body > .container:last-of-type {
     left: 102%;
     opacity: 1;
     visibility: visible;
+}
+
+/**
+*   Composant : select personnalisé
+**/
+select.custom {
+    cursor: pointer;
+	font-family: 'Oufit', sans-serif;
+    font-size: 14px;
+	padding: 8px 40px 8px 16px;
+	border-radius: 8px;
+	border: 1px solid var(--grey);
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, .09);*/
+	outline: none;
+	transition: all .2s;
+	appearance: none;
+    min-width: 150px;
+    background-color: var(--light);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 16L6 10H18L12 16Z'%3E%3C/path%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 8px center;
+	background-size: 18px 18px;
+}
+
+select.custom options {
+    font-family: var(--lato) !important;
+}
+
+/**
+*   Composant : gestion des tags (tags)
+**/
+.tags-wrap .wrapper {
+    padding: 4px;
+    border: 1px solid var(--dark-grey-2);
+    border-radius: 4px;
+    width: 100%;
+}
+
+.tags-wrap .wrapper li {
+    list-style-type: none;
+}
+
+.tags-wrap .wrapper .tags {
+    display: flex;
+    align-items: center;
+    grid-gap: 4px;
+    flex-wrap: wrap;
+}
+
+.tags-wrap .wrapper .tags li {
+    background: var(--light-grey);
+    padding: 2px 4px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    grid-gap: 6px;
+}
+
+.tags-wrap .wrapper .tags li .text {
+    padding: 2px;
+}
+
+.tags-wrap .wrapper .tags li .close-button {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: .3s ease;
+}
+
+.tags-wrap .wrapper .tags li .close-button:hover {
+    background: #D7D7D7;
+    color: var(--black);
+}
+
+.tags-wrap .wrapper .tags .input-tag {
+    flex-basis: 70px;
+    flex-grow: 1;
+    outline: none;
+    min-width: 70px;
+    padding: 2px 0;
+    border: none;
+    font-size: 14px;
+}
+
+.tags-wrap .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.tags-wrap .bottom .remove-all {
+    cursor: pointer;
+    padding: 4px 12px;
+    outline: none;
+    background: transparent;
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.tags-wrap .bottom .remove-all:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.tags-wrap .bottom > p {
+    margin-top: 10px;
+}
+
+.total-tags {
+    font-weight: 600;
 }
 
 /**
