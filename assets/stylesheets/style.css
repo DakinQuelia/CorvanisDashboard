@@ -1117,12 +1117,12 @@ select.custom options {
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
-    margin-bottom: -10px;
+    
 }
 
 .tags-wrap .bottom .remove-all {
     cursor: pointer;
-    padding: 4px 12px;
+    padding: 10px 20px;
     outline: none;
     background: transparent;
     border: 1px solid var(--blue);
