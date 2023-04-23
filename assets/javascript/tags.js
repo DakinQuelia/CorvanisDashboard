@@ -26,6 +26,7 @@ input.addEventListener('input', function()
             if (!listTag.includes(text) && text !== "" && text !== " ")
             {
                 listTag.push(text);
+                
                 addTag();
             }
         });
@@ -34,6 +35,11 @@ input.addEventListener('input', function()
 
         this.value = "";
     }
+});
+
+input.addEventListener('enter', function()
+{
+    
 });
 
 /**
