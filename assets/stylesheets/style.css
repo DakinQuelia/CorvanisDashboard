@@ -1107,9 +1107,10 @@ select.custom options {
     flex-grow: 1;
     outline: none;
     min-width: 70px;
-    padding: 2px 0;
+    padding: 2px 4px;
     border: none;
     font-size: 14px;
+    border-radius: 4px;
 }
 
 .tags-wrap .bottom {
@@ -1117,7 +1118,6 @@ select.custom options {
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
-    
 }
 
 .tags-wrap .bottom .remove-all {
@@ -1140,7 +1140,7 @@ select.custom options {
     margin-top: 10px;
 }
 
-.total-tags {
+.tags-wrap .bottom .total-tags {
     font-weight: 600;
 }
 
