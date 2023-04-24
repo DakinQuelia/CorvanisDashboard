@@ -19,6 +19,8 @@
     --light:                #F9F9F9;
     --black:                #222222;
     --blue:                 #3C91E6;
+    --blue-2:               #3B5998;
+    --blue-3:               #1DA1F2;
     --light-blue:           #CFE8FF;
     --light-blue-2:         #e0f0ff;
     --grey:                 #EEEEEE;
@@ -38,17 +40,23 @@
     --orange:               #FD7238;
     --light-orange:         #FFE0D3;
     --green:                #008000;
+    --green-2:              #25D366;
     --light-green:          #C2FFC2;
     --violet:               #805DCA;
     --white:                #FFFFFF;
+    --pink:                 #C13583;
+    /* Autres couleurs */
     --primary:              var(--blue);
     --secondary:            var(--yellow-2);
-    /* Autres couleurs */
-    --modal-border-color:   #DDDDDD;
-    --color-facebook:       #3B5998;
-    --color-twitter:        #1DA1F2;
-    --color-whatsapp:       #25D366;
-    --color-instagram:      #C13583;
+    /* Couleurs des composants */
+    --modal-border-color:   var(--light-grey-2);
+    --color-facebook:       var(--blue-2);
+    --color-twitter:        var(--blue-3);
+    --color-whatsapp:       var(--green-2);
+    --color-instagram:      var(--pink);
+    /* Composant : tag */
+    --tag-bg:               var(--black);
+    --tag-color:            var(--white);
 }
 
 /**
@@ -1243,6 +1251,34 @@ select.custom options {
 
 .tags-wrap .bottom .total-tags {
     font-weight: 600;
+}
+
+/**
+*   Composant : tags label
+**/
+.tags-label {
+
+}
+
+.tag-label {
+    font-size: 85%;
+    font-weight: 600;
+    display: inline-flex;
+    padding: .1em .5em;
+    border-radius: 4px;
+    background: var(--tag-bg);
+    color: var(--tag-color);
+    text-transform: none;
+    text-decoration: none !important;
+    vertical-align: bottom;
+}
+
+.tags-label .tag-label:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.tag-label-text {
+
 }
 
 /**
