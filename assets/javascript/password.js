@@ -6,7 +6,8 @@
 **/
 const showPass = document.querySelector('.form .form-group .input-group .show-pass');
 const inputPass = document.querySelector('.form .form-group .input-group input');
-const strengthIndicator = document.querySelector('.form .strength');
+const strengthContainer = document.querySelector('.strength-container');
+const strengthIndicator = document.querySelector('.strength-container .strength-bar');
 const listColors = ['#FF002E', '#FCDE05', '#249FD5', '#67CA5B'];
 let numstrength = 0;
 let isShow = false;
@@ -48,6 +49,19 @@ inputPass.addEventListener('input', function()
 
     strengthIndicator.style.setProperty('--width', `${numstrength * 25}%`);
     strengthIndicator.style.setProperty('--bg-color', listColors[numstrength - 1]);
+});
+
+/**
+*   On affiche/masque l'information sur la vérification.
+**/
+inputPass.addEventListener("focus", function()
+{
+    strengthContainer.style.display = "block";
+});
+
+inputPass.addEventListener("blur", function()
+{
+    strengthContainer.style.display = "none";
 });
 
 /**

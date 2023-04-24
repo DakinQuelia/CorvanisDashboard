@@ -151,19 +151,24 @@
                     </div>
                 </div>
             </div>
-            <h1 style="margin-bottom: 15px;">Gestion du mot de passe</h1>
+            <h1 style="margin-bottom: 15px;">Vérification du mot de passe</h1>
             <div class="row">
                 <div class="modal" style="margin: 0 auto; width: 400px;">
-                    <h3><i class="bx bx-show"></i> Vérification du mot de passe</h3>
                     <form action="" class="form password-checker">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="password" name="password" id="password" placeholder="" /> 
-                                <label for="passowrd">Mot de passe</label>
-                                <i class="bx bxs-show show-pass"></i>
+                        <div class="password-container">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="password" name="password" id="password" placeholder="" /> 
+                                    <label for="password">Mot de passe</label>
+                                    <i class="bx bxs-show show-pass"></i>
+                                </div>
+                                <div class="strength-container">
+                                    <h3 class="title"><i class="bx bx-"></i> Vérification</h3>
+                                    <div class="strength-bar"></div>
+                                    <p class="help-text">Minimum de <strong>8</strong> caractères : majuscules, minuscules, nombres ou caractères spéciaux.</p>
+                                    <div class="arrow"></div>
+                                </div>
                             </div>
-                            <div class="strength"></div>
-                            <p class="help-text">Minimum de 8 caractères : majuscules, minuscules, nombres ou caractères spéciaux.</p>
                         </div>
                     </form>
                 </div>
