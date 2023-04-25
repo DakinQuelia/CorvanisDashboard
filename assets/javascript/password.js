@@ -81,7 +81,7 @@ function checkPassword(password)
 
     if (space.test(password))
     {
-        throw new Error(`Il ne peut y avoir d'espace`);
+        throw new Error(`Il ne peut y avoir d'espace ; veuillez les supprimer.`);
     }
 
     if (number.test(password))

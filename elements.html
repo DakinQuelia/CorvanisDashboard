@@ -176,7 +176,7 @@
             </div>
             -->
            
-            <!--  -->
+            <!--  
             <div class="row">
                 <div class="password-container"> 
                     <form action="" class="form password-checker">
@@ -196,36 +196,47 @@
                     </form>
                 </div>
             </div>
+            -->
 
             <div class="row">
                 <div class="container"> 
                     <h1>Formulaire</h1>
-                    <form action="" class="form">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="username" name="username" id="username" placeholder="" /> 
-                                <label for="username">Nom d'utilisateur</label>
-                                <div class="help-container">
-                                    <span class="title"><i class="bx bx-user"></i> Nom d'utilisateur</span>
-                                    <p class="help-text">Ceci est le nom d'utilisateur affiché sur le site.</p>
-                                    <div class="arrow"></div>
+                    <div class="password-container"> 
+                        <form action="" class="form password-checker">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="username" name="username" id="username" placeholder="" /> 
+                                    <label for="username">Nom d'utilisateur</label>
+                                    <!--<div class="help-container">
+                                        <span class="title"><i class="bx bx-user"></i> Nom d'utilisateur</span>
+                                        <p class="help-text">Ceci est le nom d'utilisateur affiché sur le site.</p>
+                                        <div class="arrow"></div>
+                                    </div>-->
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="password" name="password2" id="password2" placeholder="" /> 
-                                <label for="password2">Mot de passe</label>
-                                <i class="bx bxs-show show-pass"></i>
-                                <div class="help-container">
-                                    <span class="title"><i class="bx bx-"></i> Force du mot de passe</span>
-                                    <div class="strength-bar"></div>
-                                    <p class="help-text">Minimum de <strong>8</strong> caractères : majuscules, minuscules, nombres ou caractères spéciaux.</p>
-                                    <div class="arrow"></div>
+                            <div class="form-group">
+                                <div class="input-group"> 
+                                    <input type="password" name="password2" id="password2" placeholder="" /> 
+                                    <label for="password2">Mot de passe</label>
+                                    <i class="bx bxs-show show-pass"></i>
+                                    <div class="strength-container">
+                                        <span class="title"><i class="bx bx-"></i> Force du mot de passe</span>
+                                        <div class="strength-bar"></div>
+                                        <p class="help-text">Minimum de <strong>8</strong> caractères : majuscules, minuscules, nombres ou caractères spéciaux.</p>
+                                        <div class="arrow"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                            <div class="form-group">
+                                <label for="country"></label>
+                                <select name="country" id="country">
+                                    <option value="" selected>Option 1</option>
+                                    <option value="">Option 2</option>
+                                    <option value="">Option 3</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             
