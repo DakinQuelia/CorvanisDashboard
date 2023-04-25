@@ -5,23 +5,28 @@
 *   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
 **/
 const allInputs = document.querySelectorAll('.form-group input');
-const helpContainer = document.querySelector('.help-container');
 
-allInputs.forEach((item) => function() 
+if (allInputs.length !== 0 || allInputs !== undefined || allInputs !== null)
 {
-    /**
-    *   On affiche l'information d'aide.
-    **/
-    item.addEventListener("focus", () =>
+    allInputs.forEach((item) =>
     {
-        helpContainer.style.display = "block";
-    });
+        const parent = item.parentElement;
+        const helpContainer = parent.querySelector('.help-container');
 
-    /**
-    *   On masque l'information d'aide. 
-    **/
-    item.addEventListener("blur", () =>
-    {
-        helpContainer.style.display = "none";
+        /**
+        *   On affiche l'information d'aide.
+        **/
+        item.addEventListener("focus", () =>
+        {
+            helpContainer.style.display = "block";
+        });
+
+        /**
+        *   On masque l'information d'aide. 
+        **/
+        item.addEventListener("blur", () =>
+        {
+            helpContainer.style.display = "none";
+        });
     });
-});
+}

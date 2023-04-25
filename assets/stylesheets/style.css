@@ -120,6 +120,7 @@ body > .container:last-of-type {
     max-width: 400px;
     width: 100%;
     margin-right: auto;
+    position: relative;
 }
 
 .container form .form-input {
@@ -555,6 +556,7 @@ body > .container:last-of-type {
 
 .form .form-group .input-group {
     position: relative;
+    width: 100%;
 }
 
 .form .form-group .input-group input {
@@ -635,9 +637,6 @@ body > .container:last-of-type {
     color: var(--dark-grey);
 }
 
-/**
-*   Composant : help container
-**/
 .form .help-container {
     position: absolute;
     width: 350px;
@@ -650,6 +649,20 @@ body > .container:last-of-type {
     border-radius: 8px;
     z-index: 100;
 }
+
+.form .help-container .arrow {
+    width: 13px;
+    height: 13px;
+    border-top: thin solid #d4d4d4;
+    border-left: thin solid #d4d4d4;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 20px;
+    left: -8px;
+    background-color: var(--white);
+    z-index: 50;
+}
+
 
 /**
 *   Tableaux
