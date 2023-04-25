@@ -5,7 +5,7 @@
 *   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
 **/
 const showPass = document.querySelector('.password-container .form .form-group .input-group .show-pass');
-const inputPass = document.querySelector('.password-container .form .form-group .input-group input');
+const inputPass = document.querySelector('.password-container .form .form-group .input-group input[type="password"]');
 const strengthContainer = document.querySelector('.strength-container');
 const strengthIndicator = document.querySelector('.strength-container .strength-bar');
 const listColors = ['#FF002E', '#FCDE05', '#249FD5', '#67CA5B'];

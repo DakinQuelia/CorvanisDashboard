@@ -13,6 +13,11 @@ if (allInputs.length !== 0 || allInputs !== undefined || allInputs !== null)
         const parent = item.parentElement;
         const helpContainer = parent.querySelector('.help-container');
 
+        if (helpContainer === null || helpContainer === undefined)
+        {
+            return false;
+        }
+
         /**
         *   On affiche l'information d'aide.
         **/
