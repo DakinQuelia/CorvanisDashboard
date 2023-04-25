@@ -8,6 +8,7 @@ const showPass = document.querySelector('.password-container .form .form-group .
 const inputPass = document.querySelector('.password-container .form .form-group .input-group input[type="password"]');
 const strengthContainer = document.querySelector('.strength-container');
 const strengthIndicator = strengthContainer.querySelector('.strength-bar');
+const titleLevel = strengthContainer.querySelector('.title .title-level');
 const listColors = ['#FF002E', '#FCDE05', '#249FD5', '#67CA5B'];
 
 /**
@@ -61,6 +62,7 @@ inputPass.addEventListener('keyup', (e) =>
 
     strengthIndicator.style.setProperty('--width', `${numstrength * 25}%`);
     strengthIndicator.style.setProperty('--bg-color', listColors[numstrength - 1]);
+    titleLevel.style.setProperty('--pwd-level-color', listColors[numstrength - 1]);
 });
 
 /**
@@ -123,7 +125,7 @@ function checkPassword(password)
         }
     }
 
-    if (symbol.test(password))
+    if (special.test(password))
     {
         if (!isContainsSymbol)
         {

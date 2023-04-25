@@ -1408,9 +1408,10 @@ form .help-container .help-text,
 }
 
 .password-container .strength-container .title-level {
+    --pwd-level-color: transparent;
     font-size: 14px;
     font-weight: bold;
-    color: var(--pwd-level);
+    color: var(--pwd-level-color);
     line-height: 20px;
 }
 
