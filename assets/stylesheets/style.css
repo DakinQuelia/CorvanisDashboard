@@ -622,10 +622,12 @@ form input:focus,
     color: #000000;
 }
 
+.form .label
 .form .form-group .label {
     display: flex;
 }
 
+form .strength-bar,
 .form .strength-bar {
     --width: 0;
     --bg-color: transparent; 
@@ -638,6 +640,7 @@ form input:focus,
     overflow: hidden;
 }
 
+form .strength-bar::before,
 .form .strength-bar::before {
     content: '';
     position: absolute;
@@ -706,6 +709,7 @@ form .help-container .help-text,
     color: var(--dark-grey-3);
 }
 
+form select,
 .form select {
     cursor: pointer;
 	font-family: 'Oufit', sans-serif;
@@ -723,16 +727,24 @@ form .help-container .help-text,
 	background-size: 18px 18px;
 }
 
+form select:focus,
+.form select:focus {
+    border-color: var(--blue);
+}
+
+form select options,
 .form select options {
     font-family: var(--lato) !important;
 }
 
+form .buttons,
 .form .buttons {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
+form .buttons button,
 .form .buttons button {
     cursor: pointer;
     padding: 10px 15px;
@@ -745,6 +757,7 @@ form .help-container .help-text,
     transition: .3s ease;
 }
 
+form .buttons button:hover,
 .form .buttons button:hover {
     background-color: var(--blue-2);
 }
