@@ -4,7 +4,7 @@
 *   Version     : 1.0.0.
 *   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
 **/
-const allInputs = document.querySelectorAll('input');
+const allInputs = document.querySelectorAll('.form-group input');
 const helpContainer = document.querySelector('.help-container');
 
 allInputs.forEach((item) => function() 
