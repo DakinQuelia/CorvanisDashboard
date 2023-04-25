@@ -75,7 +75,7 @@ window.addEventListener('resize', function()
 // Menu contextuel
 const contextMenu = document.querySelector('.context-menu');
 
-window.addEventListener('contextmenu', function(e) 
+/*window.addEventListener('contextmenu', function(e) 
 {
     e.preventDefault();
 
@@ -91,4 +91,4 @@ window.addEventListener('contextmenu', function(e)
         contextMenu.style.left = `${e.offsetX}px`;
         contextMenu.classList.add('show');
     }
-});
+});*/

@@ -97,6 +97,7 @@ body.dark {
     box-shadow: 0 10px 30px rgba(0, 0, 0, .07);
     color: var(--dark);
     padding: 10px 24px;
+    width: 100%;
 }
 
 body > .container {
@@ -538,6 +539,7 @@ body > .container:last-of-type {
 **/
 .form {
     width: 100%;
+    position: relative;
 }
 
 .form.password-checker {
@@ -546,7 +548,9 @@ body > .container:last-of-type {
 }
 
 .form .form-group {
-
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 .form .form-group .input-group {
@@ -629,6 +633,22 @@ body > .container:last-of-type {
     font-size: 12px;
     margin-top: 8px;
     color: var(--dark-grey);
+}
+
+/**
+*   Composant : help container
+**/
+.form .help-container {
+    position: absolute;
+    width: 350px;
+    padding: 15px;
+    left: 410px;
+    top: -12px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    background-color: var(--white);
+    border-radius: 8px;
+    z-index: 100;
 }
 
 /**
@@ -1289,27 +1309,29 @@ select.custom options {
     width: 100%;
 }
 
-.strength-container {
+.password-container .strength-container {
+    position: absolute;
     width: 350px;
     padding: 15px;
-    position: absolute;
-    left: 280px;
-    top: 27px;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, .1);
+    /*left: 280px;
+    top: 27px;*/
+    left: 410px;
+    top: -12px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     display: none;
     background-color: var(--white);
     border-radius: 8px;
     z-index: 100;
 }
 
-.strength-container .title {
+.password-container .strength-container .title {
     font-size: 14px;
     font-weight: bold;
     color: var(--black);
     line-height: 20px;
 }
 
-.strength-container .strength-bar {
+.password-container .strength-container .strength-bar {
     --width: 0;
     --bg-color: transparent; 
     width: 100%;
@@ -1321,14 +1343,14 @@ select.custom options {
     overflow: hidden;
 }
 
-.strength-container .strength-description {
+.password-container .strength-container .strength-description {
     font-size: 14px;
     color: #777;
     margin-top: 20px;
     line-height: 18px;
 }
 
-.strength-container .arrow {
+.password-container .strength-container .arrow {
     width: 13px;
     height: 13px;
     border-top: thin solid #d4d4d4;
