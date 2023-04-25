@@ -577,6 +577,11 @@ body > .container:last-of-type {
     outline: none;
 }
 
+form input:focus,
+.form .form-group .input-group input:focus {
+    border-color: var(--blue);
+}
+
 .form .form-group .input-group label {
     position: absolute;
     top: 50%;
@@ -1265,6 +1270,10 @@ form .help-container .help-text,
     width: 100%;
 }
 
+.tags-wrap .wrapper:focus-within {
+    border-color: var(--blue);
+}
+
 .tags-wrap .wrapper li {
     list-style-type: none;
 }
@@ -1389,8 +1398,6 @@ form .help-container .help-text,
     position: absolute;
     width: 350px;
     padding: 15px;
-    /*left: 280px;
-    top: 27px;*/
     left: 410px;
     top: -12px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
