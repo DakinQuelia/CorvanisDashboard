@@ -7,8 +7,12 @@
 const showPass = document.querySelector('.password-container .form .form-group .input-group .show-pass');
 const inputPass = document.querySelector('.password-container .form .form-group .input-group input[type="password"]');
 const strengthContainer = document.querySelector('.strength-container');
-const strengthIndicator = document.querySelector('.strength-container .strength-bar');
+const strengthIndicator = strengthContainer.querySelector('.strength-bar');
 const listColors = ['#FF002E', '#FCDE05', '#249FD5', '#67CA5B'];
+
+/**
+*   Variables modifiables
+**/
 let numstrength = 0;
 let isShow = false;
 let isContainsNum = false;
@@ -19,7 +23,7 @@ let isGreater8 = false;
 /**
 *   On affiche/masque le mot de passe
 **/
-showPass.addEventListener('click', function()
+showPass.addEventListener('click', () =>
 {
     isShow = !isShow;
 
@@ -38,12 +42,12 @@ showPass.addEventListener('click', function()
 /**
 *   On affiche/masque l'information sur la vérification.
 **/
-inputPass.addEventListener("focus", function()
+inputPass.addEventListener("focus", () =>
 {
     strengthContainer.style.display = "block";
 });
 
-inputPass.addEventListener("blur", function()
+inputPass.addEventListener("blur", () =>
 {
     strengthContainer.style.display = "none";
 });
@@ -51,9 +55,9 @@ inputPass.addEventListener("blur", function()
 /**
 *   On vérifie le mot de passe lorsqu'il est tapé.
 **/
-inputPass.addEventListener('input', function() 
+inputPass.addEventListener('keyup', (e) =>
 {
-    checkPassword(this.value);
+    checkPassword(e.target.value);
 
     strengthIndicator.style.setProperty('--width', `${numstrength * 25}%`);
     strengthIndicator.style.setProperty('--bg-color', listColors[numstrength - 1]);
@@ -72,9 +76,10 @@ function checkPassword(password)
     const number = new RegExp('.*[0-9]');
 	const alphabet = new RegExp('.*[a-zA-Z]');
 	const symbol = new RegExp('.*\\W');
+    const special = new RegExp('/[!\"$&%/()=?@`~\\.\';:+=^*_-]+/');
 	const greater8 = new RegExp('.{8,}');
 
-    if (this.value === "")
+    if (password === "")
     {
         numstrength = 0;
     }

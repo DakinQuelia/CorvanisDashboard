@@ -26,6 +26,7 @@
     --grey:                 #EEEEEE;
     --dark-grey:            #AAAAAA;
     --dark-grey-2:          #CCCCCC;    
+    --dark-grey-3:          #777777;
     --dark:                 #342E37;
     --dark-light-1:         #343434;
     --dark-light-2:         #555555;
@@ -569,7 +570,7 @@ body > .container:last-of-type {
 
 .form .form-group .input-group input {
     width: 100%;
-    padding: 5px 10px;
+    padding: 8px 10px;
     background: var(--light);
     border: 1px solid var(--dark-grey-2);
     border-radius: 4px;
@@ -620,7 +621,7 @@ body > .container:last-of-type {
     display: flex;
 }
 
-.form .strength {
+.form .strength-bar {
     --width: 0;
     --bg-color: transparent; 
     width: 100%;
@@ -632,7 +633,7 @@ body > .container:last-of-type {
     overflow: hidden;
 }
 
-.form .strength::before {
+.form .strength-bar::before {
     content: '';
     position: absolute;
     top: 0;
@@ -643,12 +644,7 @@ body > .container:last-of-type {
     transition: all .3s ease;
 }
 
-.form .help-text {
-    font-size: 12px;
-    margin-top: 8px;
-    color: var(--dark-grey);
-}
-
+form .help-container,
 .form .help-container {
     position: absolute;
     width: 350px;
@@ -662,6 +658,7 @@ body > .container:last-of-type {
     z-index: 100;
 }
 
+form .help-container .arrow,
 .form .help-container .arrow {
     width: 13px;
     height: 13px;
@@ -675,10 +672,39 @@ body > .container:last-of-type {
     z-index: 50;
 }
 
+form .help-container .arrow-right,
+.form .help-container .arrow-right {
+    width: 13px;
+    height: 13px;
+    border-bottom: thin solid #d4d4d4;
+    border-right: thin solid #d4d4d4;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 20px;
+    right: -8px;
+    background-color: var(--white);
+    z-index: 50;
+}
+
+form .help-container .title,
+.form .help-container .title {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--black);
+    line-height: 20px;
+}
+
+form .help-container .help-text,
+.form .help-container .help-text {
+    font-size: .85rem;
+    margin-top: 8px;
+    color: var(--dark-grey-3);
+}
+
 .form select {
     cursor: pointer;
 	font-family: 'Oufit', sans-serif;
-	padding: 5px 40px 5px 10px;
+	padding: 8px 40px 8px 10px;
 	border-radius: 4px;
 	border: 1px solid var(--dark-grey-2);
 	outline: none;
@@ -696,6 +722,27 @@ body > .container:last-of-type {
     font-family: var(--lato) !important;
 }
 
+.form .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.form .buttons button {
+    cursor: pointer;
+    padding: 10px 15px;
+    outline: none;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.form .buttons button:hover {
+    background-color: var(--blue-2);
+}
 
 /**
 *   Tableaux
@@ -1207,6 +1254,10 @@ body > .container:last-of-type {
 /**
 *   Composant : gestion des tags (tags)
 **/
+.tags-wrap {
+    position: relative;
+}
+
 .tags-wrap .wrapper {
     padding: 4px;
     border: 1px solid var(--dark-grey-2);
@@ -1356,6 +1407,13 @@ body > .container:last-of-type {
     line-height: 20px;
 }
 
+.password-container .strength-container .title-level {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--pwd-level);
+    line-height: 20px;
+}
+
 .password-container .strength-container .strength-bar {
     --width: 0;
     --bg-color: transparent; 
@@ -1368,10 +1426,21 @@ body > .container:last-of-type {
     overflow: hidden;
 }
 
-.password-container .strength-container .strength-description {
-    font-size: 14px;
-    color: #777;
-    margin-top: 20px;
+.password-container .strength-container .strength-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--width);
+    background: var(--bg-color);
+    height: 100%;
+    transition: all .3s ease;
+}
+
+.password-container .strength-container .help-text {
+    font-size: .85rem;
+    color: var(--dark-grey-3);
+    margin-top: 10px;
     line-height: 18px;
 }
 
@@ -1384,6 +1453,19 @@ body > .container:last-of-type {
     position: absolute;
     top: 20px;
     left: -8px;
+    background-color: var(--white);
+    z-index: 50;
+}
+
+.password-container .strength-container .arrow-right {
+    width: 13px;
+    height: 13px;
+    border-top: thin solid #d4d4d4;
+    border-right: thin solid #d4d4d4;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 20px;
+    right: -8px;
     background-color: var(--white);
     z-index: 50;
 }

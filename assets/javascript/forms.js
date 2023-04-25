@@ -4,14 +4,15 @@
 *   Version     : 1.0.0.
 *   Auteur(s)   : Dakin Quelia <dakinquelia@gmail.com>
 **/
-const allInputs = document.querySelectorAll('.form-group input');
+const allInputs = document.querySelectorAll('form input');
 
+// On gère les infobulles d'aide des champs du formulaire
 if (allInputs.length !== 0 || allInputs !== undefined || allInputs !== null)
 {
     allInputs.forEach((item) =>
     {
         const parent = item.parentElement;
-        const helpContainer = parent.querySelector('.help-container');
+        const helpContainer = parent.querySelector('form .help-container');
 
         if (helpContainer === null || helpContainer === undefined)
         {
