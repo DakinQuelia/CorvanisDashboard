@@ -8,13 +8,55 @@ const input = document.querySelector('.wrapper .tags .input-tag');
 const tagWrapper = document.querySelector('.wrapper .tags');
 const removeAll = document.querySelector('.bottom .remove-all');
 const totalTags = document.querySelector('.tags-wrap .bottom .total-tags');
+const suggestions = document.querySelector('.suggestion-tags');
+
 let listTag = [];
+
+const suggestList = getItemSuggestion([
+    { name: 'Javascript' },
+    { name: 'CSS' },
+    { name: 'PHP' },
+    { name: 'HTML' }
+]);
+
+suggestList.forEach((item) => 
+{
+    const li = document.createElement('li');
+    const liText = document.createTextNode(item.name.toLowerCase());
+    
+    li.appendChild(liText);
+    suggestions.appendChild(li);
+});
 
 /**
 *   On ajoute le tag à la liste 
 **/
 input.addEventListener('input', function()
 {
+    const itemListFilter = suggestList.filter(item => { return item.name.toLowerCase().includes(this.value.toLowerCase()) });
+
+    suggestions.querySelectorAll('li').forEach(item => item.remove());
+
+    itemListFilter.forEach((item) => 
+    {
+        const li = document.createElement('li');
+        const liText = document.createTextNode(item.name.toLowerCase());
+        
+        li.appendChild(liText);
+        suggestions.appendChild(li);
+    });
+
+    if(itemListFilter.length === 0) 
+    {
+        const li = document.createElement('li');
+        const liText = document.createTextNode('Introuvable');
+
+		li.className = 'not-found';
+		li.appendChild(liText);
+
+		suggestions.appendChild(li);
+    }
+
     if (this.value.includes(','))
     {
         const str = this.value.toLowerCase().replace(/ +/g, ' ').split(',');
@@ -37,6 +79,9 @@ input.addEventListener('input', function()
     }
 });
 
+/**
+* 
+**/
 input.addEventListener('enter', function()
 {
     
@@ -60,6 +105,35 @@ input.addEventListener('keydown', function(e)
             getTagsCount();
         }
     }
+});
+
+/**
+*   On supprime le tag de la liste.
+**/
+window.addEventListener('click', function(e) 
+{
+    if (e.target.matches('.bx.bx-x.close-button'))
+    {
+        const li = e.target.parentElement;
+        const text = li.querySelector('.text').textContent;
+
+        tagWrapper.removeChild(li);
+        listTag.splice(listTag.indexOf(text), 1);
+        
+        getTagsCount();
+    }
+});
+
+/**
+*   On supprime tous les tags.
+**/
+removeAll.addEventListener('click', function(e) 
+{
+    tagWrapper.querySelectorAll('li').forEach(li => li.remove());
+
+    listTag = [];
+
+    getTagsCount();
 });
 
 /**
@@ -95,30 +169,18 @@ function getTagsCount()
 }
 
 /**
-*   On supprime le tag
+*   Cette fonction retourne la liste de suggestions des tags.
+*
+*   @return {void}
 **/
-window.addEventListener('click', function(e) 
+function getItemSuggestion(listItems)
 {
-    if (e.target.matches('.bx.bx-x.close-button'))
+    listItems.forEach((item) => 
     {
-        const li = e.target.parentElement;
-        const text = li.querySelector('.text').textContent;
-
-        tagWrapper.removeChild(li);
-        listTag.splice(listTag.indexOf(text), 1);
-        
-        getTagsCount();
-    }
-});
-
-/**
-*   On supprime tous les tags
-**/
-removeAll.addEventListener('click', function(e) 
-{
-    tagWrapper.querySelectorAll('li').forEach(li => li.remove());
-
-    listTag = [];
-
-    getTagsCount();
-});
+        const li = document.createElement('li');
+        const liText = document.createTextNode(item.name.toLowerCase());
+            
+        li.appendChild(liText);
+        suggestions.appendChild(li);
+    });
+}

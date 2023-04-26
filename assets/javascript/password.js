@@ -42,13 +42,16 @@ showPass.addEventListener('click', () =>
 });
 
 /**
-*   On affiche/masque l'information sur la vérification.
+*   On affiche l'information sur la vérification.
 **/
 inputPass.addEventListener("focus", () =>
 {
     strengthContainer.style.display = "block";
 });
 
+/**
+*   On masque l'information sur la vérification.
+**/
 inputPass.addEventListener("blur", () =>
 {
     strengthContainer.style.display = "none";
