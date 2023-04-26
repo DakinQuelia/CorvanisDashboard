@@ -72,8 +72,21 @@ window.addEventListener('resize', function()
     }
 });
 
-// Changement de thème
+// Changement de thème : light*/dark
+const switchMode = document.querySelector('#switch-mode');
+const body = document.querySelector('body');
 
+switchMode.addEventListener('change', function() 
+{
+    if (this.checked)
+    {
+        body.classList.add('dark');
+    }
+    else 
+    {
+        body.classList.remove('dark');
+    }
+});
 
 // Menu contextuel
 const contextMenu = document.querySelector('.context-menu');
