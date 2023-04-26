@@ -55,7 +55,7 @@
     --color-twitter:        var(--blue-3);
     --color-whatsapp:       var(--green-2);
     --color-instagram:      var(--pink);
-    /* Composant : tag */
+    /* Composant : tags */
     --tag-bg:               var(--black);
     --tag-color:            var(--white);
     /* Composant : help */
@@ -103,10 +103,11 @@ body.dark {
     --light-grey:           #222222;
     --light-grey-2:         #000000;
     --light-grey-4:         #333333;
-    
+
     --main-bg-color:        var(--grey);
     --status-color:         var(--white-2);
     --table-headers-border: var(--white-2);
+    --help-border-color:    transparent;
 }
 
 body {
@@ -395,6 +396,35 @@ p {
     height: 36px;
     object-fit: cover;
     border-radius: 50%;
+}
+
+/**
+*   Composant : switch mode
+**/
+.content nav .switch-wrapper .switch-mode {
+    cursor: pointer;
+    display: block; 
+    min-width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    background: var(--dark-grey-2);
+    position: relative;
+}
+
+.content nav .switch-wrapper .switch-mode::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    bottom: 3px;
+    width: calc(25px - 6px);
+    background: var(--light);
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+.content nav #switch-mode:checked + .switch-mode::before {
+    left: calc(100% - (25px - 6px) - 3px);
 }
 
 /**

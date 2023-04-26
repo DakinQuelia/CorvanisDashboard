@@ -72,6 +72,9 @@ window.addEventListener('resize', function()
     }
 });
 
+// Changement de thème
+
+
 // Menu contextuel
 const contextMenu = document.querySelector('.context-menu');
 
