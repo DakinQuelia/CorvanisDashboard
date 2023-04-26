@@ -10,11 +10,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
-    /* Global */
-    --poppins:              'Poppins', sans-serif;
-    --lato:                 'Lato', sans-serif;
-    --sidebar-width:        280px;
-    --border-radius-btn:    36px;
     /* Couleurs */
     --light:                #F9F9F9;
     --black:                #222222;
@@ -33,6 +28,7 @@
     --light-grey:           #ebe9e9; 
     --light-grey-2:         #DDDDDD;
     --light-grey-3:         #EEEEEE;
+    --light-grey-4:         #d4d4d4;
     --red:                  #DB504A;
     --light-red:            #fdc5c3;
     --yellow:               #FFCE26;
@@ -49,6 +45,10 @@
     /* Autres couleurs */
     --primary:              var(--blue);
     --secondary:            var(--yellow-2);
+    /* Formulaires */
+    --input-border-color:   var(--dark-grey-2);
+    /* Tableaux */
+    --table-headers-border: var(--grey);
     /* Couleurs des composants */
     --modal-border-color:   var(--light-grey-2);
     --color-facebook:       var(--blue-2);
@@ -58,6 +58,18 @@
     /* Composant : tag */
     --tag-bg:               var(--black);
     --tag-color:            var(--white);
+    /* Composant : help */
+    --help-border-color:    var(--light-grey-4);
+    /* Composant : notification */
+    --notif-text-color:     var(--white);
+    /* Composant : status */
+    --status-color:         var(--light);
+    /* Global */
+    --poppins:              'Poppins', sans-serif;
+    --lato:                 'Lato', sans-serif;
+    --sidebar-width:        280px;
+    --border-radius-btn:    36px;
+    --main-bg-color:        var(--grey);
 }
 
 /**
@@ -81,15 +93,25 @@ html {
 	overflow: hidden;
 }
 
-body {
-    background: var(--grey);
-    overflow-x: hidden;
-}
-
 body.dark {
 	--light:                #0C0C1E;
 	--grey:                 #060714;
 	--dark:                 #FBFBFB;
+    --black:                #FFFFFF;
+    --white:                #333333;
+    --white-2:              #F9F9F9;
+    --light-grey:           #222222;
+    --light-grey-2:         #000000;
+    --light-grey-4:         #333333;
+    
+    --main-bg-color:        var(--grey);
+    --status-color:         var(--white-2);
+    --table-headers-border: var(--white-2);
+}
+
+body {
+    background: var(--main-bg-color);
+    overflow-x: hidden;
 }
 
 .container {
@@ -112,6 +134,14 @@ body > .container:last-of-type {
 .row {
     display: flex;
     margin-bottom: .5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--black);
+}
+
+p {
+    color: var(--black);
 }
 
 /**
@@ -322,6 +352,7 @@ body > .container:last-of-type {
 
 .content nav i.bx.bx-menu {
     cursor: pointer;
+    color: var(--dark);
 }
 
 .content nav .nav-link {
@@ -351,7 +382,7 @@ body > .container:last-of-type {
     border-radius: 50%;
     border: 2px solid var(--light);
     background: var(--red);
-    color: var(--light);
+    color: var(--notif-text-color);
     font-weight: 700;
     font-size: 10px;
     display: flex;
@@ -568,11 +599,13 @@ body > .container:last-of-type {
     width: 100%;
 }
 
+form input,
 .form .form-group .input-group input {
     width: 100%;
     padding: 8px 10px;
     background: var(--light);
-    border: 1px solid var(--dark-grey-2);
+    color: var(--dark);
+    border: 1px solid var(--input-border-color);
     border-radius: 4px;
     outline: none;
 }
@@ -671,12 +704,12 @@ form .help-container .arrow,
 .form .help-container .arrow {
     width: 13px;
     height: 13px;
-    border-top: thin solid #d4d4d4;
-    border-left: thin solid #d4d4d4;
+    border-top: thin solid var(--help-border-color);
+    border-left: thin solid var(--help-border-color);
     transform: rotate(-45deg);
     position: absolute;
     top: 20px;
-    left: -8px;
+    left: -7px;
     background-color: var(--white);
     z-index: 50;
 }
@@ -685,12 +718,12 @@ form .help-container .arrow-right,
 .form .help-container .arrow-right {
     width: 13px;
     height: 13px;
-    border-bottom: thin solid #d4d4d4;
-    border-right: thin solid #d4d4d4;
+    border-bottom: thin solid var(--help-border-color);
+    border-right: thin solid var(--help-border-color);
     transform: rotate(-45deg);
     position: absolute;
     top: 20px;
-    right: -8px;
+    right: -7px;
     background-color: var(--white);
     z-index: 50;
 }
@@ -717,6 +750,7 @@ form select,
 	padding: 8px 40px 8px 10px;
 	border-radius: 4px;
 	border: 1px solid var(--dark-grey-2);
+    color: var(--dark);
 	outline: none;
 	transition: all .2s;
 	appearance: none;
@@ -772,6 +806,7 @@ form .buttons button:hover,
     grid-gap: 24px;
     margin-top: 24px;
     width: 100%;
+    color: var(--dark);
 }
 
 .content main .table-data > div {
@@ -812,7 +847,7 @@ form .buttons button:hover,
     display: flex;
     align-items: center;
     width: 100%;
-    border-bottom: 2px solid var(--grey);
+    border-bottom: 2px solid var(--table-headers-border);
 }
 
 .content main .table .table-header .col {
@@ -919,7 +954,7 @@ form .buttons button:hover,
     width: 100px;
     font-size: 12px;
     padding: 3px 16px;
-    color: var(--light);
+    color: var(--status-color);
     border-radius: 20px;
     background: var(--grey);
     overflow-x: hidden;
@@ -1306,6 +1341,7 @@ form .buttons button:hover,
     display: flex;
     align-items: center;
     grid-gap: 6px;
+    color: var(--dark);
 }
 
 .tags-wrap .wrapper .tags li .text {
@@ -1469,8 +1505,8 @@ form .buttons button:hover,
 .password-container .strength-container .arrow {
     width: 13px;
     height: 13px;
-    border-top: thin solid #d4d4d4;
-    border-left: thin solid #d4d4d4;
+    border-top: thin solid var(--help-border-color);
+    border-left: thin solid var(--help-border-color);
     transform: rotate(-45deg);
     position: absolute;
     top: 20px;
@@ -1482,8 +1518,8 @@ form .buttons button:hover,
 .password-container .strength-container .arrow-right {
     width: 13px;
     height: 13px;
-    border-top: thin solid #d4d4d4;
-    border-right: thin solid #d4d4d4;
+    border-top: thin solid var(--help-border-color);
+    border-right: thin solid var(--help-border-color);
     transform: rotate(-45deg);
     position: absolute;
     top: 20px;

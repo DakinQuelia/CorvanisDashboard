@@ -109,8 +109,7 @@ function checkPassword(password)
             }
         }
     }
-
-    if (alphabet.test(password))
+    else if (alphabet.test(password))
     {
         if (!isContainsAlp)
         {
@@ -126,8 +125,7 @@ function checkPassword(password)
             }
         }
     }
-
-    if (special.test(password))
+    else if (special.test(password))
     {
         if (!isContainsSymbol)
         {
@@ -143,8 +141,7 @@ function checkPassword(password)
             }
         }
     }
-    
-    if (greater8.test(password))
+    else if (greater8.test(password))
     {
         if (!isGreater8)
         {
