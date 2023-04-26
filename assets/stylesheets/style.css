@@ -773,6 +773,12 @@ form .help-container .help-text,
     color: var(--dark-grey-3);
 }
 
+form .tag-help,
+.form .tag-help {
+    margin-left: 2px;
+    color: var(--dark);
+}
+
 form select,
 .form select {
     cursor: pointer;
