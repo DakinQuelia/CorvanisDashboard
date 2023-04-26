@@ -664,6 +664,7 @@ form .help-container,
     background-color: var(--white);
     border-radius: 8px;
     z-index: 100;
+    transition: all .3s ease;
 }
 
 form .help-container .arrow,
