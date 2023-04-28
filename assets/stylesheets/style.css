@@ -1475,6 +1475,10 @@ form .buttons button:hover,
     max-height: 300px;
 }
 
+.suggestion-wrapper .suggestion-tags li.not-found {
+    color: var(--red);
+}
+
 /**
 *   Composant : tags label
 **/
