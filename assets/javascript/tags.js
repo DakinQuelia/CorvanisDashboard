@@ -19,25 +19,9 @@ const suggestList = getItemSuggestion([
     { name: 'HTML' }
 ]);
 
-suggestList.forEach((item) => 
+if (suggestList !== undefined)
 {
-    const li = document.createElement('li');
-    const liText = document.createTextNode(item.name.toLowerCase());
-    
-    li.appendChild(liText);
-    suggestions.appendChild(li);
-});
-
-/**
-*   On ajoute le tag à la liste 
-**/
-input.addEventListener('input', function()
-{
-    const itemListFilter = suggestList.filter(item => { return item.name.toLowerCase().includes(this.value.toLowerCase()) });
-
-    suggestions.querySelectorAll('li').forEach(item => item.remove());
-
-    itemListFilter.forEach((item) => 
+    suggestList.forEach((item) => 
     {
         const li = document.createElement('li');
         const liText = document.createTextNode(item.name.toLowerCase());
@@ -45,16 +29,38 @@ input.addEventListener('input', function()
         li.appendChild(liText);
         suggestions.appendChild(li);
     });
+}
 
-    if(itemListFilter.length === 0) 
+/**
+*   On ajoute le tag à la liste 
+**/
+input.addEventListener('input', function()
+{
+    if (suggestList !== undefined)
     {
-        const li = document.createElement('li');
-        const liText = document.createTextNode('Introuvable');
+        const itemListFilter = suggestList.filter(item => { return item.name.toLowerCase().includes(this.value.toLowerCase()) });
 
-		li.className = 'not-found';
-		li.appendChild(liText);
-
-		suggestions.appendChild(li);
+        suggestions.querySelectorAll('li').forEach(item => item.remove());
+    
+        itemListFilter.forEach((item) => 
+        {
+            const li = document.createElement('li');
+            const liText = document.createTextNode(item.name.toLowerCase());
+            
+            li.appendChild(liText);
+            suggestions.appendChild(li);
+        });
+    
+        if(itemListFilter.length === 0) 
+        {
+            const li = document.createElement('li');
+            const liText = document.createTextNode('Introuvable');
+    
+            li.className = 'not-found';
+            li.appendChild(liText);
+    
+            suggestions.appendChild(li);
+        }
     }
 
     if (this.value.includes(','))
