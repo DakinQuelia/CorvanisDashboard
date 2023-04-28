@@ -36,9 +36,11 @@ if (suggestList !== undefined)
 **/
 input.addEventListener('input', function()
 {
+    const inputValue = this.value;
+
     if (suggestList !== undefined)
     {
-        const itemListFilter = suggestList.filter(item => { return item.name.toLowerCase().includes(this.value.toLowerCase()) });
+        const itemListFilter = suggestList.filter(item => { return item.name.toLowerCase().includes(inputValue.toLowerCase()) });
 
         suggestions.querySelectorAll('li').forEach(item => item.remove());
     
@@ -63,7 +65,7 @@ input.addEventListener('input', function()
         }
     }
 
-    if (this.value.includes(','))
+    if (inputValue.includes(','))
     {
         const str = this.value.toLowerCase().replace(/ +/g, ' ').split(',');
 
