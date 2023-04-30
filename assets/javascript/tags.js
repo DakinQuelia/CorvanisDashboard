@@ -6,7 +6,7 @@
 **/
 const input = document.querySelector('.wrapper .tags .input-tag');
 const tagWrapper = document.querySelector('.wrapper .tags');
-const removeAll = document.querySelector('.bottom .remove-all');
+const removeAllBtn = document.querySelector('.bottom .remove-all');
 const totalTags = document.querySelector('.tags-wrap .bottom .total-tags');
 const suggestions = document.querySelector('.suggestion-tags');
 const allSuggestion = suggestions.querySelectorAll('li');
@@ -25,8 +25,6 @@ if (suggestList !== undefined)
     getItemSuggestion(suggestList);
 }
 
-
-
 /**
 *   On ajoute le tag à la liste 
 **/
@@ -38,7 +36,7 @@ input.addEventListener('input', function()
     {
         if (suggestList !== undefined || suggestList !== null)
         {
-            getSuggestionTags(suggestList, inputValue);
+            getAutoSuggestion(suggestList, inputValue);
         }
     }
 
@@ -64,6 +62,12 @@ input.addEventListener('input', function()
 
         inputValue = "";
     }
+
+    // Récupération des tags suggérés
+    getSuggestionTags(allSuggestion, inputValue);
+
+    // Suppression du tag de la liste
+    removeTag();
 });
 
 /**
@@ -102,33 +106,9 @@ input.addEventListener('keydown', function(e)
 /**
 *   On supprime tous les tags.
 **/
-removeAll.addEventListener('click', function(e) 
+removeAllBtn.addEventListener('click', function(e) 
 {
-    tagWrapper.querySelectorAll('li').forEach(li => li.remove());
-
-    listTag = [];
-
-    getTagsCount();
-
-	input.value = '';
-	input.focus();
-});
-
-/**
-*   On supprime le tag de la liste.
-**/
-window.addEventListener('click', function(e) 
-{
-    if (e.target.matches('.bx.bx-x.close-button'))
-    {
-        const li = e.target.parentElement;
-        const text = li.querySelector('.text').textContent;
-
-        tagWrapper.removeChild(li);
-        listTag.splice(listTag.indexOf(text), 1);
-        
-        getTagsCount();
-    }
+    removeAll();
 });
 
 /**
@@ -154,14 +134,56 @@ function addTag()
 }
 
 /**
-*   Cette fonction récupère la liste suggérée des tags.
+*   Cette fonction récupère la liste de tous les tags suggérés.
+*   
+*   @param {array} allSuggestion
+*   @param {InputHTMLElement} input
+*   
+*   @return {void}
+**/
+function getSuggestionTags(allSuggestion, input)
+{
+    allSuggestion.forEach((item) => 
+    {
+        item.addEventListener('click', function() 
+        {
+            if (!listTag.includes(this.textContent)) 
+            {
+                listTag.push(this.textContent);
+
+                addTag();
+            }
+
+            input.value = '';
+
+            const allRmBtn = document.querySelectorAll('.tags > li .bx.bx-x.close-button');
+
+            allRmBtn.forEach(item => 
+            {
+				item.addEventListener('click', function () 
+                {
+					listTag = listTag.filter(i=> { return i !== this.parentElement.textContent });
+
+					this.parentElement.remove();
+
+					getTagsCount();
+
+					input.focus();
+				})
+			})
+        });
+    });
+}
+
+/**
+*   Cette fonction récupère la liste des tags sur base de l'entrée de l'utilisateur.
 * 
 *   @param {array} suggestList 
 *   @param {InputHTMLElement} input
 *   
 *   @return {void}
 **/
-function getSuggestionTags(suggestList, input)
+function getAutoSuggestion(suggestList, input)
 {
     const itemListFilter = suggestList.filter(item => { return item.name.toLowerCase().includes(input.toLowerCase()) });
     
@@ -213,4 +235,45 @@ function getItemSuggestion(listItems)
         li.appendChild(liText);
         suggestions.appendChild(li);
     });
+}
+
+/**
+*   Cette méthode permet de supprimer le tag précis.
+*
+*   @return {void}
+**/
+function removeTag()
+{
+    const allRmBtn = document.querySelectorAll('.tags > li .bx.bx-x.close-button');
+
+	allRmBtn.forEach(item=> 
+    {
+		item.addEventListener('click', function () 
+        {
+			listTag = listTag.filter((i) => { return i !== this.parentElement.textContent });
+
+			this.parentElement.remove();
+
+			getTagsCount();
+			
+            input.focus();
+		});
+	});
+}
+
+/**
+*   Cette fonction permet de supprimer tous les tags.
+*
+*   @return {void}
+**/
+function removeAll()
+{
+    tagWrapper.querySelectorAll('li').forEach(li => li.remove());
+
+    listTag = [];
+
+    getTagsCount();
+
+	input.value = '';
+	input.focus();
 }
